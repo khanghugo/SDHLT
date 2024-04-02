@@ -13,6 +13,11 @@ message("${CMAKE_PROJECT_NAME} > Starting configuration for ${CMAKE_PROJECT_DESC
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/tools)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/tools)
+set(CXXFLAGS, "-static -static-libgcc -static-libstdc++")
+set(CMAKE_CXX_FLAGS "${CXXFLAGS}")
+add_compile_options(-static-libgcc -static-libstdc++)
+add_compile_options(-static)
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -static -static-libgcc -static-libstdc++")
 
 #================
 # Configuration
